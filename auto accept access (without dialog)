@@ -1,0 +1,14 @@
+function hook223(varlist)
+    if varlist[1]:find("wants to add you to a") then
+        netid = GetLocal().netid
+        pkt= "action|wrench\n|netid|"..netid
+        pkt2 = "action|dialog_return\ndialog_name|popup\nnetID|"..netid.."|\nbuttonClicked|acceptlock"
+        pkt3= "action|dialog_return\ndialog_name|acceptaccess"
+        SendPacket(2,pkt)
+        Sleep(100)
+        SendPacket(2,pkt2)
+        Sleep(100)
+        SendPacket(2,pkt3)
+        Sleep(100)
+    end
+end
